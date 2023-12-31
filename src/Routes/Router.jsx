@@ -28,9 +28,9 @@ export const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/book/:_id",
+        path: "/book/:id",
         element: <SingleBook></SingleBook>,
-        loader: () => fetch(`http://localhost:5000/book`),
+        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`),
       },
     ],
   },
